@@ -47,14 +47,9 @@ function recVolume(height) {
       return measurement;
     }
   };
-  return measurement;
 }
 
-const recHeight = recVolume(15);
-const recLength = recHeight(12);
-const recWidth = recLength(12);
 
-console.log(recWidth);
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
 try {
