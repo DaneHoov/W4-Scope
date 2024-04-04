@@ -36,6 +36,7 @@ function returned by recVolume should continue to return the original volume.
 
 function recVolume(height) {
   let dimensions = [height];
+
   const measurement = (num) => {
     if (dimensions.length < 3) {
       dimensions.push(num);
@@ -47,6 +48,7 @@ function recVolume(height) {
       return measurement;
     }
   };
+  return measurement;
 }
 
 
