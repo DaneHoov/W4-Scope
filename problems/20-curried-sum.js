@@ -42,9 +42,52 @@ AFTER YOU ARE FINISHED WITH THIS PROBLEM, ASK FOR A CODE REVIEW
 - Come up with at least two situations (one per person) on when currying would
   be useful
 ***********************************************************************/
+// Here is a breakdown of how curriedSum(numArgs) should work:
+//     - Define an empty array, `numbers`.
+//     - Define a function, `_curriedSum` that:
+//         - Closes over `numArgs` and `numbers`.
+//         - Takes a single postive integer greater than 0 as an argument.
+//           - If number is less than or equal to 0 return null
+//         - Appends this to the `numbers` array each time.
+//         - If `numbers.length === numArgs`, it sums the numbers in the array and
+//         returns the result.
+//         - Else, it returns itself.
+//     - Returns `_curriedSum`.
 
-// Your code here 
+const curriedSum = (numArgs) => {
+  let numbers = [];
+  let total = 0;
 
+  if (numArgs <= 0) {
+    return null;
+  }
+
+  return _curriedSum = (num) => {
+    numbers.push(num);
+
+    if (numbers.length === numArgs) {
+
+      for (let i = 0; i < numbers.length; i++) {
+        let el = numbers[i];
+        total += el;
+      }
+      return total;
+    }
+    return _curriedSum;
+  }
+}
+
+
+// 1
+const sum = curriedSum(4); // returns a function
+console.log(sum(5)) // returns a function
+console.log(sum(20)) // returns a function
+console.log(sum(30)) // returns a function
+console.log(sum(20)); // => returns 75
+
+// 2
+// this function can also be invoked like this:
+// const sum = curriedSum(3)(2)(1)(7); // => returns 10
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
 try {
